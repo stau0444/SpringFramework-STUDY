@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>홈입니다</h1>
+	삭제되었습니다
+	<a href="${pageContext.request.contextPath}/home.do">홈으로</a>
 </body>
 </html>

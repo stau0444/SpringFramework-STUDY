@@ -5,6 +5,6 @@
 <!-- 사용할 Mapper 목록설정 -->
 <configuration>
 	<mappers>
-		<mapper resource="com/gura/spring05/mybatis/MemberMapper.xml"/>
+		<mapper resource="comm/gura/spring04/mybatis/MemberMapper.xml"/>
 	</mappers>
 </configuration>

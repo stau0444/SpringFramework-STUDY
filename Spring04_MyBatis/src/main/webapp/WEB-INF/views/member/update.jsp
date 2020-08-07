@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>홈입니다</h1>
 </body>
+<script>
+	alert("수정되었습니다")
+	location.href="list.do";
+</script>
 </html>

@@ -34,7 +34,7 @@ public class MemberDaoImpl implements MemberDao{
 	public MemberDto getData(int num) {
 		
 		
-		MemberDto dto=session.selectOne("member.select", num);
+		MemberDto dto=session.selectOne("member.getData", num);
 		return dto;
 	}
 
