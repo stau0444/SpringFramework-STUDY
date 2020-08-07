@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- id 설정안하고 클래스만 설정  (타입을 전달하는 방법) -->
+	<bean class="test.mypac.Weaponimpl"/>
+	<bean class="test.mypac.RemoconImpl"/>
+	<bean class="test.mypac.RemoconImpl2"/>
+</beans>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="e1" class="test.auto.Engine"/>
+	
+	<!-- car 객체에 기본생성자가 없기 때문에 -->
+	<!-- car1=new Car(e1) -->
+	<bean id="car1" class="test.auto.Car" >
+		<constructor-arg name="engine" ref="e1"/>
+	</bean>
+	<!-- 
+		자바코드로 작성시
+		sedan1=new Sedan();
+		sedan1.setName("소나타");
+		sedan1.setWeight(1000);
+		sedan1.setEngine(e1);
+		property는 setter와 같다
+	 -->
+	<!--숫자 문자 불리언은 value로  참조값을 넣어줄 때는 ref로-->
+	<bean id="sedan1" class="test.auto.Sedan">
+		<property name="name" value="소나타"/>
+		<property name="weight" value="1000"/>
+		<property name="engine" ref="e1"/>
+	</bean>
+</beans>
