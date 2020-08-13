@@ -22,6 +22,7 @@
 	</c:choose>
 	<h1>인덱스 페이지 입니다.</h1>
 	<p>Spring Framework 동작중 ...</p>
+	<a href="file/list.do">자료실 목록보기</a>
 </div>
 </body>
 </html>
