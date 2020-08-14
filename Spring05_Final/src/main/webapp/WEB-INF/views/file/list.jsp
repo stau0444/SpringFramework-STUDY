@@ -47,23 +47,22 @@
 		</table>
 		<div class="page-display">
 			<ul class="pagination justify-content-center">
-				<%--JSTL --%>
-				<c:if test="${startPageNum ne 1}">
-					<li class="page-item"><a class="page-link" href="list.do?pageNum=${condition}&condition=${startPageNum-1}&keyword=${encodedK}">prev</a></li>
-				</c:if>
-				<c:forEach var="i" begin="${startPageNum}" end="${endPageNum}" step="1">
-					<c:choose >
-						<c:when test="${i eq pageNum}">
-							<li class="page-item active"><a class="page-link" href="list.do?pageNum=${i}&condition=${condition }&keyword=${encodedK}">${i}</a></li>
-						</c:when>
-						<c:otherwise>
-							<li class="page-item"><a class="page-link" href="list.do?pageNum=${i}&condition=${condition }&keyword=${encodedK}">${i}</a></li>
-						</c:otherwise>
-					</c:choose>
-				</c:forEach>
-				<c:if test="${endPageNum lt totalPageNum }">
-					<li class="page-item" ><a class="page-link" href="list.do?pageNum="${endPageNum+1}&condition=${condition }&keyword=${encodedK}">next</a></li>
-				</c:if>
+					<c:if test="${startPageNum ne 1 }">
+						<li class="page-item"><a class="page-link" href="list.do?pageNum=${startPageNum-1 }&condition=${condition }&keyword=${encodedK }">Prev</a></li>
+					</c:if>
+					<c:forEach var="i" begin="${startPageNum }" end="${endPageNum }">
+						<c:choose>
+							<c:when test="${i eq pageNum }">
+								<li class="page-item active"><a class="page-link" href="list.do?pageNum=${i }&condition=${condition }&keyword=${encodedK }">${i }</a></li>
+							</c:when>
+							<c:otherwise>
+								<li class="page-item"><a class="page-link" href="list.do?pageNum=${i }&condition=${condition }&keyword=${encodedK }">${i }</a></li>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+					<c:if test="${endPageNum lt totalPageCount }">
+						<li class="page-item"><a class="page-link" href="list.do?pageNum=${endPageNum+1 }&condition=${condition }&keyword=${encodedK }">Next</a></li>
+					</c:if>
 			</ul>
 		</div>
 		<hr/>

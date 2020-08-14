@@ -10,4 +10,5 @@ public interface UsersDao {
 	public void delete(String id);
 	public void update(UsersDto dto);
 	public boolean updatePwd(UsersDto dto);
+	public void updateWarnNum(String id);
 }

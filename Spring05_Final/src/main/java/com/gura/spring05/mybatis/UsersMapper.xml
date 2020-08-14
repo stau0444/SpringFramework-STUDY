@@ -10,8 +10,8 @@
 	</select>
 	<insert id="insert" parameterType="usersDto">
 		INSERT INTO users
-		(id, pwd, email, regdate)
-		VALUES(#{id}, #{pwd}, #{email}, SYSDATE)
+		(id, pwd, email, regdate,warnnum)
+		VALUES(#{id}, #{pwd}, #{email}, SYSDATE,0)
 	</insert>
 	<select id="isValid" parameterType="usersDto" resultType="string">
 		SELECT id
@@ -21,8 +21,7 @@
 	
 	<select id="getData" parameterType="string"
 		resultType="usersDto">
-		SELECT id,pwd,email,profile,
-			TO_CHAR(regdate, 'YY.MM.DD HH24"시"MM"분"') AS regdate
+		SELECT id,pwd,email,profile,regdate,warnnum
 		FROM users
 		WHERE id=#{id}	
 	</select>
@@ -41,6 +40,11 @@
 		UPDATE users
 		SET pwd=#{newPwd}
 		WHERE id=#{id} AND pwd=#{pwd}
+	</update>
+	<update id="updateWarnNum" parameterType="string">
+		UPDATE users
+		SET warnnum=warnnum+1
+		WHERE id=#{id}
 	</update>
 </mapper>
 

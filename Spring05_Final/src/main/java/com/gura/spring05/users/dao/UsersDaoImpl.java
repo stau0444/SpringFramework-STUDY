@@ -65,6 +65,11 @@ public class UsersDaoImpl implements UsersDao{
 			return false;
 		}
 	}
+
+	@Override
+	public void updateWarnNum(String id) {
+		session.update("updateWarnNum",id);
+	}
 	
 }
 
